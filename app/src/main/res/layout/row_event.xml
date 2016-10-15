@@ -9,13 +9,15 @@
         android:layout_height="wrap_content"
         android:text="Event Title"
         android:gravity="center"
-        android:textAppearance="?android:textAppearanceLarge"/>
+        android:textAppearance="?android:textAppearanceLarge"
+        android:id="@+id/eventTitle"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="event description"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"/>
+        android:layout_marginRight="10dp"
+        android:id="@+id/eventDescription"/>
 
 </LinearLayout>

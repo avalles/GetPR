@@ -1,5 +1,6 @@
 package com.trafalascode.getpr;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,18 +35,23 @@ public class Login extends AppCompatActivity {
     }
 
     public void onLoginPressed() {
-        ParseUser.logInInBackground(username.getText().toString(), pass.getText().toString(), new LogInCallback() {
-            @Override
-            public void done(ParseUser user, ParseException e) {
-                if (e == null && user != null) {
-                    Toast.makeText(Login.this, "User successfully logged in.", Toast.LENGTH_LONG).show();
-                } else if (user == null) {
-                    Toast.makeText(Login.this, "Invalid credentials.", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(Login.this, "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
-                }
+//        ParseUser.logInInBackground(username.getText().toString(), pass.getText().toString(), new LogInCallback() {
+//            @Override
+//            public void done(ParseUser user, ParseException e) {
+//                if (e == null && user != null) {
+//                    Toast.makeText(Login.this, "User successfully logged in.", Toast.LENGTH_LONG).show();
+//                    Intent intent = new Intent(Login.this, EventList.class);
+//                    startActivity(intent);
+//                    finish();
+//                } else if (user == null) {
+//                    Toast.makeText(Login.this, "Invalid credentials.", Toast.LENGTH_LONG).show();
+//                } else {
+//                    Toast.makeText(Login.this, "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        });
 
-            }
-        });
+        Intent intent = new Intent(this, EventList.class);
+        startActivity(intent);
     }
 }
