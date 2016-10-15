@@ -16,7 +16,7 @@ import com.parse.SignUpCallback;
 
 public class SignUp extends AppCompatActivity {
 
-    EditText email, pass;
+    EditText username, email, pass;
     Button signUp;
 
     @Override
@@ -24,6 +24,7 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        username = (EditText)findViewById(R.id.signUpUsernameEditText);
         email = (EditText)findViewById(R.id.signUpEmailEditText);
         pass = (EditText)findViewById(R.id.signUpPassEditText);
         signUp = (Button)findViewById(R.id.signUpButton);
@@ -38,20 +39,26 @@ public class SignUp extends AppCompatActivity {
     }
 
     public void onSignUpPressed(){
-        ParseUser user = new ParseUser();
-        user.setUsername("test");
-        user.setEmail(email.getText().toString());
-        user.setPassword(pass.getText().toString());
+//        ParseUser user = new ParseUser();
+//        user.setUsername(username.getText().toString());
+//        user.setEmail(email.getText().toString());
+//        user.setPassword(pass.getText().toString());
+//
+//        user.signUpInBackground(new SignUpCallback() {
+//            @Override
+//            public void done(ParseException e) {
+//                if(e==null){
+//                    Toast.makeText(SignUp.this, "User signed up", Toast.LENGTH_LONG).show();
+//                    Intent intent = new Intent(SignUp.this, SetUpProfile.class);
+//                    startActivity(intent);
+//                    finish();
+//                }else{
+//                    Toast.makeText(SignUp.this, "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        });
 
-        user.signUpInBackground(new SignUpCallback() {
-            @Override
-            public void done(ParseException e) {
-                if(e==null){
-                    Toast.makeText(SignUp.this, "User signed up", Toast.LENGTH_LONG).show();
-                }else{
-                    Toast.makeText(SignUp.this, "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+        Intent intent = new Intent(this, SetUpProfile.class);
+        startActivity(intent);
     }
 }
