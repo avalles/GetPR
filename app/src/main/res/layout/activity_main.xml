@@ -5,18 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.trafalascode.getpr.MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    tools:context="com.trafalascode.getpr.MainActivity"
+    android:weightSum="1">
 
     <Button
-        android:layout_width="match_parent"
+        android:text="Login"
+        android:layout_width="217dp"
         android:layout_height="wrap_content"
-        android:text="Hello!"/>
+        android:id="@+id/login"
+        android:onClick="login"/>
 
+    <Button
+        android:text="Sign Up"
+        android:layout_width="214dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/signup"
+        android:onClick="signup"/>
 
 
 </LinearLayout>
