@@ -1,6 +1,7 @@
 package com.trafalascode.getpr.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.parse.ParseObject;
+import com.trafalascode.getpr.EventDetails;
 import com.trafalascode.getpr.R;
 
 import java.util.List;
@@ -56,6 +58,14 @@ public class EventListAdapter extends BaseAdapter {
         description = (TextView) rowView.findViewById(R.id.eventDescription);
         title.setText(Events.get(i).getString("eventName"));
         description.setText(Events.get(i).getString("description"));
+
+        rowView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, EventDetails.class);
+            }
+        });
+
         return rowView;
     }
 }
