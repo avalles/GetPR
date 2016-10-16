@@ -29,7 +29,6 @@
         <activity android:name=".SignUp" />
         <activity android:name=".SetUpProfile" />
         <activity android:name=".EventList" />
-        <activity android:name=".EventDetails" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

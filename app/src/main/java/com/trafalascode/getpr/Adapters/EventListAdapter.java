@@ -9,7 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.parse.ParseObject;
-import com.trafalascode.getpr.EventDetails;
 import com.trafalascode.getpr.EventMap;
 import com.trafalascode.getpr.R;
 

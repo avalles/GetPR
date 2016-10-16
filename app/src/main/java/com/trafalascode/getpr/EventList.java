@@ -20,6 +20,11 @@ public class EventList extends AppCompatActivity {
     ListView eventList;
     EventListAdapter adapter;
     Button west;
+    Button north;
+    Button east;
+    Button south;
+    Button metro;
+    int pressed = 0;
 
     ImageView mapImage;
 
@@ -29,7 +34,11 @@ public class EventList extends AppCompatActivity {
         setContentView(R.layout.activity_event_list);
 
         eventList = (ListView)findViewById(R.id.eventListListView);
-        west = (Button)findViewById(R.id.button2);
+        west = (Button)findViewById(R.id.westButton);
+        north = (Button)findViewById(R.id.northButton);
+        east = (Button)findViewById(R.id.eastButton);
+        south = (Button)findViewById(R.id.southButton);
+        metro = (Button)findViewById(R.id.metroButton);
         mapImage = (ImageView)findViewById(R.id.mapImageView);
 
         adapter = new EventListAdapter(this);
@@ -38,9 +47,66 @@ public class EventList extends AppCompatActivity {
         west.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("click");
-                mapImage.setImageResource(R.drawable.oeste);
-//                mapImage.setImageDrawable(getResources().getDrawable(R.drawable.oeste));
+                if (pressed != 1) {
+                    mapImage.setImageResource(R.drawable.oeste);
+                    pressed = 1;
+                } else {
+                    mapImage.setImageResource(R.drawable.vacio);
+                    pressed = 0;
+                }
+            }
+        });
+
+        north.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (pressed != 2) {
+                    mapImage.setImageResource(R.drawable.norte);
+                    pressed = 2;
+                } else {
+                    mapImage.setImageResource(R.drawable.vacio);
+                    pressed = 0;
+                }
+            }
+        });
+
+        east.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (pressed != 3) {
+                    mapImage.setImageResource(R.drawable.este);
+                    pressed = 3;
+                } else {
+                    mapImage.setImageResource(R.drawable.vacio);
+                    pressed = 0;
+                }
+            }
+        });
+
+        south.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (pressed != 4) {
+                    mapImage.setImageResource(R.drawable.sur);
+                    pressed = 4;
+                }
+                else {
+                    mapImage.setImageResource(R.drawable.vacio);
+                    pressed = 0;
+                }
+            }
+        });
+
+        metro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (pressed != 5) {
+                    mapImage.setImageResource(R.drawable.metro);
+                    pressed = 5;
+                } else {
+                    mapImage.setImageResource(R.drawable.vacio);
+                    pressed = 0;
+                }
             }
         });
 

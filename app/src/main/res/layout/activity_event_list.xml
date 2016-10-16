@@ -12,24 +12,66 @@
         android:id="@+id/mapView"
         android:background="@color/colorPrimaryDark">
 
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"
-            android:id="@+id/button2"
-            android:background="@android:color/transparent"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/vacio"
             android:id="@+id/mapImageView"/>
 
+        <Button
+            android:layout_width="115dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="23dp"
+            android:id="@+id/southButton"
+            android:background="@android:color/transparent"
+            android:layout_below="@+id/northButton"
+            android:layout_alignLeft="@+id/northButton"
+            android:layout_alignStart="@+id/northButton" />
+
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/northButton"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="57dp"
+            android:layout_marginEnd="57dp"
+            android:id="@+id/eastButton"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_above="@+id/eastButton"
+            android:layout_alignRight="@+id/eastButton"
+            android:layout_alignEnd="@+id/eastButton"
+            android:layout_marginRight="26dp"
+            android:layout_marginEnd="26dp"
+            android:id="@+id/metroButton"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:id="@+id/westButton"
+            android:background="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="115dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/westButton"
+            android:layout_toEndOf="@+id/westButton"
+            android:layout_marginLeft="29dp"
+            android:layout_marginStart="29dp"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="39dp"
+            android:id="@+id/northButton" />
 
 
     </RelativeLayout>
