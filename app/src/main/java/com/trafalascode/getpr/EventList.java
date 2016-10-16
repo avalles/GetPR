@@ -1,11 +1,13 @@
 package com.trafalascode.getpr;
 
+import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -28,6 +30,8 @@ public class EventList extends AppCompatActivity {
 
     ImageView mapImage;
 
+    ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +44,8 @@ public class EventList extends AppCompatActivity {
         south = (Button)findViewById(R.id.southButton);
         metro = (Button)findViewById(R.id.metroButton);
         mapImage = (ImageView)findViewById(R.id.mapImageView);
+
+        progressBar = (ProgressBar)findViewById(R.id.progressBar);
 
         adapter = new EventListAdapter(this);
         eventList.setAdapter(adapter);
@@ -115,6 +121,8 @@ public class EventList extends AppCompatActivity {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
                 adapter.setData(objects);
+                progressBar.setVisibility(View.GONE);
+
             }
         });
 

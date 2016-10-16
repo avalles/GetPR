@@ -56,7 +56,7 @@
             android:id="@+id/loginButton"
             android:textColor="#fff"
             android:background="@drawable/rnd_blue"
-            android:onClick="onLoginPressed"/>
+            />
     </LinearLayout>
 
 </LinearLayout>

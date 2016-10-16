@@ -8,7 +8,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Event Title"
-        android:gravity="center"
+        android:background="@color/colorPrimary"
+        android:padding="10dp"
+        android:textColor="#fff"
         android:textAppearance="?android:textAppearanceLarge"
         android:id="@+id/eventTitle"/>
 
@@ -16,8 +18,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="event description"
+        android:textAppearance="?android:textAppearanceMedium"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/eventDescription"/>
 
 </LinearLayout>

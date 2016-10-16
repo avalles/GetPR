@@ -66,10 +66,9 @@
             android:layout_below="@+id/loginPassword"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:id="@+id/loginButton"
+            android:id="@+id/signupButton"
             android:textColor="#fff"
-            android:background="@drawable/rnd_blue"
-            android:onClick="onLoginPressed"/>
+            android:background="@drawable/rnd_blue" />
     </LinearLayout>
 
 
