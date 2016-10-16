@@ -3,6 +3,7 @@ package com.trafalascode.getpr;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,10 +11,15 @@ import android.view.WindowManager;
 import android.widget.VideoView;
 
 import com.parse.Parse;
+import com.trafalascode.getpr.Adapters.MainPagerAdapter;
+import com.trafalascode.getpr.Utility.CustomViewPager;
 
 public class MainActivity extends AppCompatActivity {
 
     VideoView videoView;
+
+    public CustomViewPager viewPager;
+    MainPagerAdapter adapter;
 
     @Override
     protected void onResume() {
@@ -49,10 +55,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Parse.initialize(new Parse.Configuration.Builder(this)
-        .applicationId("7oYbPZwkqpIvKxgrYis6BtBz2cygQRlBTmqK2Ufv")
-        .clientKey("51h9KKW4eciUoZRl09qD7hcilttHkE1UVC0yyeeJ")
-        .server("https://parseapi.back4app.com/")
-        .build());
+                .applicationId("7oYbPZwkqpIvKxgrYis6BtBz2cygQRlBTmqK2Ufv")
+                .clientKey("51h9KKW4eciUoZRl09qD7hcilttHkE1UVC0yyeeJ")
+                .server("https://parseapi.back4app.com/")
+                .build());
+
+        viewPager = (CustomViewPager)findViewById(R.id.container);
+
+        adapter = new MainPagerAdapter(getSupportFragmentManager());
+
+        viewPager.setAdapter(adapter);
+
+        viewPager.setCurrentItem(1);
+
+        viewPager.setPagingEnabled(false);
+
 
         videoView = (VideoView)findViewById(R.id.videoView);
         String uriPath = "android.resource://"+getPackageName()+"/" + R.raw.getpr;
@@ -69,13 +86,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void login(View view) {
-        Intent intent = new Intent(this, Login.class);
-        startActivity(intent);
-    }
 
     public void signup(View view) {
         Intent intent = new Intent(this, SignUp.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if(viewPager.getCurrentItem() == 0){
+            viewPager.setCurrentItem(1);
+        }else if(viewPager.getCurrentItem() == 2){
+            viewPager.setCurrentItem(1);
+        }
+
+//        super.onBackPressed();
     }
 }

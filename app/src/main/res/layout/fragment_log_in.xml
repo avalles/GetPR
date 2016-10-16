@@ -1,0 +1,161 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.trafalascode.getpr.Fragments.LogInFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/rnd_box">
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Login"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textSize="28sp"-->
+            <!--android:textAppearance="?android:textAppearanceLarge"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--/>-->
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/rnd_white"
+            android:padding="8dp"
+            android:id="@+id/loginUsername"
+            android:hint="Username"
+            android:layout_marginTop="20dp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:background="@drawable/rnd_white"
+            android:padding="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/loginPassword"
+            android:hint="Password"
+            android:layout_below="@+id/loginUsername"
+            android:layout_alignLeft="@+id/loginUsername"
+            android:layout_alignStart="@+id/loginUsername"
+            android:layout_marginTop="19dp" />
+
+        <Button
+            android:text="Login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/loginPassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:id="@+id/loginButton"
+            android:textColor="#fff"
+            android:background="@drawable/rnd_blue"
+            android:onClick="onLoginPressed"/>
+    </LinearLayout>
+
+
+
+
+    <!--<ScrollView-->
+        <!--android:id="@+id/login_form"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight=".02"-->
+        <!--android:background="@drawable/layout_bg">-->
+        <!--<LinearLayout-->
+            <!--android:id="@+id/email_login_form"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical"-->
+            <!--&gt;-->
+
+            <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:layout_marginBottom="8dp">-->
+
+                <!--<EditText-->
+                    <!--android:id="@+id/SignInEmailOrUsernameEditText"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:hint="@string/prompt_email"-->
+                    <!--android:inputType="textEmailAddress"-->
+                    <!--android:layout_marginLeft="5dp"-->
+                    <!--android:layout_marginRight="5dp"-->
+                    <!--android:maxLines="1"-->
+                    <!--android:singleLine="true"-->
+                    <!--android:textColorHint="@color/white"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--/>-->
+
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<EditText-->
+                    <!--android:id="@+id/SignInPasswordEditText"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="5dp"-->
+                    <!--android:layout_marginRight="5dp"-->
+                    <!--android:hint="Password"-->
+                    <!--android:imeActionId="@+id/login"-->
+                    <!--android:imeActionLabel="@string/action_sign_in_short"-->
+                    <!--android:imeOptions="actionUnspecified"-->
+                    <!--android:inputType="textPassword"-->
+                    <!--android:maxLines="1"-->
+                    <!--android:singleLine="true"-->
+                    <!--android:textColorHint="@color/white"-->
+                    <!--android:textColor="@color/white"/>-->
+
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <!--&lt;!&ndash;<android.support.v7.widget.AppCompatButton&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="fill_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:text="Log in"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/LogInButton"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:background="@color/colorPrimary"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:textColor="@color/white"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:textStyle="bold"&ndash;&gt;-->
+            <!--&lt;!&ndash;/>&ndash;&gt;-->
+
+            <!--<Button-->
+                <!--android:id="@+id/LogInButton"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="16dp"-->
+                <!--android:layout_marginLeft="5dp"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:layout_marginBottom="16dp"-->
+                <!--android:elevation="5dp"-->
+                <!--android:text="Log in"-->
+                <!--android:textStyle="bold"-->
+                <!--android:textColor="#fff"-->
+                <!--android:background="@drawable/rnd_blue"-->
+                <!--/>-->
+
+        <!--</LinearLayout>-->
+    <!--</ScrollView>-->
+
+
+</LinearLayout>
