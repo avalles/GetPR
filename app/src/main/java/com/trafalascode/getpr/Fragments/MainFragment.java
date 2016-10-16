@@ -18,7 +18,7 @@ import com.trafalascode.getpr.R;
  */
 public class MainFragment extends Fragment {
 
-    Button login;
+    Button login, signup;
     MainActivity mainActivity;
 
     public MainFragment() {
@@ -37,14 +37,20 @@ public class MainFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-
-
         login = (Button)rootView.findViewById(R.id.login);
+        signup = (Button)rootView.findViewById(R.id.signup);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mainActivity.viewPager.setCurrentItem(0);
+            }
+        });
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivity.viewPager.setCurrentItem(2);
             }
         });
 

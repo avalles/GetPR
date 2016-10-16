@@ -15,7 +15,6 @@ import com.trafalascode.getpr.R;
  */
 public class LogInFragment extends Fragment {
 
-    Button login, signup;
 
     public LogInFragment() {
         // Required empty public constructor
