@@ -63,6 +63,7 @@ public class EventListAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, EventDetails.class);
+                context.startActivity(intent);
             }
         });
 
