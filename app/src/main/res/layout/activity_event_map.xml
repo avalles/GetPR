@@ -22,7 +22,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -30,23 +30,29 @@
                 android:orientation="vertical">
 
                 <fragment
-                    xmlns:map="http://schemas.android.com/apk/res-auto"
                     xmlns:tools="http://schemas.android.com/tools"
                     android:id="@+id/eventDetailsMap"
                     android:name="com.google.android.gms.maps.SupportMapFragment"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_height="200dp"
                     tools:context="com.trafalascode.getpr.EventMap" />
 
-                <ListView
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/eventDetailsAttendees"
-                    android:layout_weight="1"/>
+                    android:layout_height="wrap_content"
+                    android:text="Decription"
+                    android:gravity="center"/>
 
             </LinearLayout>
         </ScrollView>
+
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/eventDetailsAttendees"
+            android:layout_weight="1"
+            />
     </LinearLayout>
 
 </FrameLayout>

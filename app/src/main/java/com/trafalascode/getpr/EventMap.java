@@ -2,6 +2,7 @@ package com.trafalascode.getpr;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.widget.ListView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -9,10 +10,15 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.trafalascode.getpr.Adapters.EventAtendeesAdapter;
 
 public class EventMap extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+
+    ListView atendeeList;
+
+    EventAtendeesAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +28,15 @@ public class EventMap extends FragmentActivity implements OnMapReadyCallback {
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.eventDetailsMap);
         mapFragment.getMapAsync(this);
+
+
+        atendeeList = (ListView)findViewById(R.id.eventDetailsAttendees);
+        adapter = new EventAtendeesAdapter(this);
+
+        atendeeList.setAdapter(adapter);
+
+
+
     }
 
 

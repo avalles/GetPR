@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.parse.ParseObject;
 import com.trafalascode.getpr.EventDetails;
+import com.trafalascode.getpr.EventMap;
 import com.trafalascode.getpr.R;
 
 import java.util.List;
@@ -62,7 +63,7 @@ public class EventListAdapter extends BaseAdapter {
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, EventDetails.class);
+                Intent intent = new Intent(context, EventMap.class);
                 context.startActivity(intent);
             }
         });
