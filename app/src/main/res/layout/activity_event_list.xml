@@ -6,10 +6,25 @@
     android:layout_height="match_parent"
     tools:context="com.trafalascode.getpr.EventList">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/mapView"
+        android:background="@color/colorPrimaryDark">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/vacio"/>
+
+    </RelativeLayout>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/eventListListView"/>
+        android:id="@+id/eventListListView"
+        android:layout_below="@+id/mapView"/>
 
 
 </RelativeLayout>
